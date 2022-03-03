@@ -25,7 +25,7 @@ function App() {
     <Conditional showIf={data.metadata}>
       <div className="App">
         <Header metadata={data.metadata} />
-        <div style={{ margin: "0 10px" }}>
+        <div style={{ margin: "0 25px" }}>
           <Summary summary={data.summary} />
           <Revenue revenue={data.revenueDetails?.estimatedRevenueTrend} />
           <ReachEngagement
