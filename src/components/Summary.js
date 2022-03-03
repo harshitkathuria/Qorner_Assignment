@@ -3,7 +3,7 @@ import React from "react";
 const Summary = ({ summary }) => {
   const { subscribers, revenue, views } = summary;
   return (
-    <div>
+    <div style={{ marginBottom: "3rem" }}>
       <h2 className="primary-text" style={styles.heading}>
         Summary
       </h2>
@@ -33,12 +33,12 @@ const styles = {
     margin: "20px 0 5px 0"
   },
   secondary: {
-    fontWeight: 600,
     marginBottom: "15px"
   },
   box: {
     display: "flex",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
+    alignItems: "center"
   }
 };
 

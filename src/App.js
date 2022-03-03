@@ -4,6 +4,8 @@ import Conditional from "./components/Conditional";
 import Header from "./components/Header/Header";
 import Summary from "./components/Summary";
 import Revenue from "./components/Revenue";
+import ReachEngagement from "./components/ReachEngagement";
+import Audience from "./components/Audience";
 
 function App() {
   const [data, setData] = useState({});
@@ -26,6 +28,14 @@ function App() {
         <div style={{ margin: "0 10px" }}>
           <Summary summary={data.summary} />
           <Revenue revenue={data.revenueDetails?.estimatedRevenueTrend} />
+          <ReachEngagement
+            reachEngagement={data.reachAndEngagementDetails?.viewsTrend}
+          />
+          <Audience
+            reachEngagement={
+              data.audienceDetails?.viewsSubscriberVsNonSubscribersTrend
+            }
+          />
         </div>
       </div>
     </Conditional>
