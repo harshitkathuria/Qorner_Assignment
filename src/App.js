@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Conditional from "./components/Conditional";
 import Header from "./components/Header/Header";
 import Summary from "./components/Summary";
+import Revenue from "./components/Revenue";
 
 function App() {
   const [data, setData] = useState({});
@@ -24,6 +25,7 @@ function App() {
         <Header metadata={data.metadata} />
         <div style={{ margin: "0 10px" }}>
           <Summary summary={data.summary} />
+          <Revenue revenue={data.revenueDetails?.estimatedRevenueTrend} />
         </div>
       </div>
     </Conditional>
