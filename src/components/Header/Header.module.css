@@ -2,9 +2,9 @@
   background: #333
     url("https://images.unsplash.com/photo-1564955731632-aae2940730ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8b2NlYW4lMjBkYXJrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60")
     no-repeat center center/cover;
-  height: 35vh;
+  height: 30vh;
   color: #fff;
-  clip-path: circle(90% at 50% -15%);
+  clip-path: circle(140% at 50% -92%);
 }
 .header_content {
   display: flex;
