@@ -19,7 +19,7 @@
 
 .primary-text {
   color: #1d1d1f;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .secondary-text {
@@ -37,7 +37,13 @@
 .box {
   padding: 35px 10px;
   background: #ffffff;
+  position: relative;
   box-shadow: -6px -6px 12px rgba(244, 244, 244, 0.43),
     6px 6px 12px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+}
+
+.chart_wrapper {
+  margin-top: 3rem;
+  height: 250px;
 }
