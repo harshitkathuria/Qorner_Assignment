@@ -1,10 +1,15 @@
 import React from "react";
 import Chart from "./Chart";
+import { useVisibilityHook } from "react-observer-api";
 
 const Audience = ({ reachEngagement }) => {
+  const { setElement, isVisible } = useVisibilityHook({
+    threshold: 0.1
+  });
+
   const {
     value,
-    change: { percentage, info },
+    change: { percentage },
     data
   } = reachEngagement;
   return (
@@ -26,8 +31,12 @@ const Audience = ({ reachEngagement }) => {
           {value} %<span style={{ fontSize: "1.1rem" }}></span>
         </p>
         <p style={styles.percentage}>{-percentage} % </p>
-        <div className="chart_wrapper">
-          <Chart dataSet={data} hasMultipleLines={true} />
+        <div
+          className="chart_wrapper"
+          style={{ marginTop: "10px" }}
+          ref={setElement}
+        >
+          {isVisible && <Chart dataSet={data} hasMultipleLines={true} />}
         </div>
       </div>
     </div>

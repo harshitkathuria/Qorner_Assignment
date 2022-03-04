@@ -1,7 +1,12 @@
 import React from "react";
 import Chart from "./Chart";
+import { useVisibilityHook } from "react-observer-api";
 
 const Revenue = ({ revenue }) => {
+  const { setElement, isVisible } = useVisibilityHook({
+    threshold: 0.1
+  });
+
   const {
     value,
     change: { percentage, info },
@@ -27,8 +32,8 @@ const Revenue = ({ revenue }) => {
         </p>
         <p style={styles.percentage}>{percentage} % </p>
         <p style={styles.info}>{info}</p>
-        <div className="chart_wrapper">
-          <Chart dataSet={data} />
+        <div className="chart_wrapper" ref={setElement}>
+          {isVisible && <Chart dataSet={data} />}
         </div>
       </div>
     </div>

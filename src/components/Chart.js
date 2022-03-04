@@ -30,7 +30,9 @@ export default function App({ dataSet, hasMultipleLines }) {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-    animationEnabled: true,
+    animation: {
+      duration: 2000
+    },
     plugins: {
       legend: {
         display: hasMultipleLines ? true : false
@@ -40,7 +42,6 @@ export default function App({ dataSet, hasMultipleLines }) {
 
   let data = {};
   if (hasMultipleLines) {
-    console.log("has");
     data = {
       labels: label,
       datasets: [
@@ -61,8 +62,6 @@ export default function App({ dataSet, hasMultipleLines }) {
       ]
     };
   } else {
-    console.log("does not have");
-
     data = {
       labels: label,
       datasets: [
@@ -75,5 +74,5 @@ export default function App({ dataSet, hasMultipleLines }) {
       ]
     };
   }
-  return <Line options={options} data={data} />;
+  return <Line options={options} data={data} height={"250px"} />;
 }
