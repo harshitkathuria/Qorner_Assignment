@@ -1,10 +1,12 @@
 import React from "react";
 import Chart from "./Chart";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { useVisibilityHook } from "react-observer-api";
 
 const Revenue = ({ revenue }) => {
   const { setElement, isVisible } = useVisibilityHook({
-    threshold: 0.1
+    threshold: 0.4
   });
 
   const {
@@ -33,7 +35,11 @@ const Revenue = ({ revenue }) => {
         <p style={styles.percentage}>{percentage} % </p>
         <p style={styles.info}>{info}</p>
         <div className="chart_wrapper" ref={setElement}>
-          {isVisible && <Chart dataSet={data} />}
+          {isVisible ? (
+            <Chart dataSet={data} />
+          ) : (
+            <Skeleton count={1} height={"200px"} duration={1.7} />
+          )}
         </div>
       </div>
     </div>

@@ -1,10 +1,12 @@
 import React from "react";
 import Chart from "./Chart";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { useVisibilityHook } from "react-observer-api";
 
 const Audience = ({ reachEngagement }) => {
   const { setElement, isVisible } = useVisibilityHook({
-    threshold: 0.1
+    threshold: 0.4
   });
 
   const {
@@ -36,7 +38,11 @@ const Audience = ({ reachEngagement }) => {
           style={{ marginTop: "10px" }}
           ref={setElement}
         >
-          {isVisible && <Chart dataSet={data} hasMultipleLines={true} />}
+          {isVisible ? (
+            <Chart dataSet={data} hasMultipleLines={true} />
+          ) : (
+            <Skeleton count={1} height={"200px"} duration={1.7} />
+          )}
         </div>
       </div>
     </div>
